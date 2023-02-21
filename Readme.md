@@ -1,1 +1,9 @@
-This is Note App
+** ------------------- Note App -------------------- **
+
+Teck Stack :-
+chakra-ui
+react
+redux
+react-redux
+redux-thunk
+react-router-dom
