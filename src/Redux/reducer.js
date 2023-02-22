@@ -1,7 +1,7 @@
 import * as types from "./actionTypes";
 
 const initialState = {
-  todos: [],
+  notes: [],
   isLoading: false,
   isError: false,
 };
@@ -10,49 +10,49 @@ const reducer = (oldState = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     // get
-    case types.GET_TODO_REQUEST:
+    case types.GET_NOTE_REQUEST:
       return { ...oldState, isLoading: true };
-    case types.GET_TODO_SUCCESS:
-      return { ...oldState, isLoading: false, todos: payload };
-    case types.GET_TODO_FAILURE:
+    case types.GET_NOTE_SUCCESS:
+      return { ...oldState, isLoading: false, notes: payload };
+    case types.GET_NOTE_FAILURE:
       return { ...oldState, isLoading: false, isError: true };
 
     // post
-    case types.ADD_TODO_REQUEST:
+    case types.ADD_NOTE_REQUEST:
       return { ...oldState, isLoading: true };
-    case types.ADD_TODO_SUCCESS:
+    case types.ADD_NOTE_SUCCESS:
       return {
         ...oldState,
         isLoading: false,
-        todos: [...oldState.todos, payload],
+        notes: [...oldState.notes, payload],
       };
-    case types.ADD_TODO_FAILURE:
+    case types.ADD_NOTE_FAILURE:
       return { ...oldState, isLoading: false, isError: true };
 
     // patch
-    case types.EDIT_TODO_REQUEST:
+    case types.EDIT_NOTE_REQUEST:
       return { ...oldState, isLoading: true };
-    case types.EDIT_TODO_SUCCESS:
+    case types.EDIT_NOTE_SUCCESS:
       return {
         ...oldState,
         isLoading: false,
-        todos: oldState.todos.map((item) =>
+        notes: oldState.notes.map((item) =>
           item.id === payload.id ? payload : item
         ),
       };
-    case types.EDIT_TODO_FAILURE:
+    case types.EDIT_NOTE_FAILURE:
       return { ...oldState, isLoading: false, isError: false };
 
     // delete
-    case types.DELETE_TODO_REQUEST:
+    case types.DELETE_NOTE_REQUEST:
       return { ...oldState, isLoading: true };
-    case types.DELETE_TODO_SUCCESS:
+    case types.DELETE_NOTE_SUCCESS:
       return {
         ...oldState,
         isLoading: false,
-        todos: oldState.todos.filter((todo) => todo.id !== payload),
+        notes: oldState.notes.filter((note) => note.id !== payload),
       };
-    case types.DELETE_TODO_FAILURE:
+    case types.DELETE_NOTE_FAILURE:
       return { ...oldState, isLoading: false, isError: true };
 
     default:

@@ -1,32 +1,19 @@
 {
-  "todos": [
+  "notes": [
     {
       "id": 1,
       "title": "Redux",
-      "category": "Urgent",
-      "date": "21-02-2023",
-      "status": "pending"
+      "description": "Learn Redux"
     },
     {
       "id": 2,
       "title": "TypeScript",
-      "category": "Important",
-      "date": "21-02-2023",
-      "status": "pending"
+      "description": "Learn TypeSript"
     },
     {
       "id": 3,
       "title": "NextJS",
-      "category": "Urgent",
-      "date": "21-02-2023",
-      "status": "pending"
-    },
-    {
-      "id": 4,
-      "title": "Testing",
-      "category": "Important",
-      "date": "21-02-2023",
-      "status": "pending"
+      "description": "Learn NextJS"
     }
   ]
 }

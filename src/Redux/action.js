@@ -1,52 +1,52 @@
 import * as types from "./actionTypes";
 import axios from "axios";
 
-// GET TODOS (GET)
-export const getTodos = () => (dispatch) => {
-  dispatch({ type: types.GET_TODO_REQUEST });
+// GET NOTES (GET)
+export const getNotes = () => (dispatch) => {
+  dispatch({ type: types.GET_NOTE_REQUEST });
 
   return axios
-    .get(`http://localhost:8080/todos`)
+    .get(`http://localhost:8080/notes`)
     .then((res) => {
-      dispatch({ type: types.GET_TODO_SUCCESS, payload: res.data });
+      dispatch({ type: types.GET_NOTE_SUCCESS, payload: res.data });
     })
     .catch((res) => {
-      dispatch({ type: types.GET_TODO_FAILURE, payload: res });
+      dispatch({ type: types.GET_NOTE_FAILURE, payload: res });
     });
 };
 
-// ADD TODOS (POST)
-export const addTodos = (payload) => async (dispatch) => {
-  dispatch({ type: types.ADD_TODO_REQUEST });
+// ADD NOTES (POST)
+export const addNotes = (payload) => async (dispatch) => {
+  dispatch({ type: types.ADD_NOTE_REQUEST });
 
   try {
-    const res = await axios.post(`http://localhost:8080/todos`, payload);
-    dispatch({ type: types.ADD_TODO_SUCCESS, payload: res.data });
+    const res = await axios.post(`http://localhost:8080/notes`, payload);
+    dispatch({ type: types.ADD_NOTE_SUCCESS, payload: res.data });
   } catch (e) {
-    dispatch({ type: types.ADD_TODO_FAILURE, payload: e });
+    dispatch({ type: types.ADD_NOTE_FAILURE, payload: e });
   }
 };
 
-// EDIT TODOS (PATCH)
-export const editTodos = (id, payload) => async (dispatch) => {
-  dispatch({ type: types.EDIT_TODO_REQUEST });
+// EDIT NOTES (PATCH)
+export const editNotes = (id, payload) => async (dispatch) => {
+  dispatch({ type: types.EDIT_NOTE_REQUEST });
 
   try {
-    const res = await axios.patch(`http://localhost:8080/todos/${id}`, payload);
-    dispatch({ type: types.EDIT_TODO_SUCCESS, payload: res.data });
+    const res = await axios.patch(`http://localhost:8080/notes/${id}`, payload);
+    dispatch({ type: types.EDIT_NOTE_SUCCESS, payload: res.data });
   } catch (e) {
-    dispatch({ type: types.EDIT_TODO_FAILURE, payload: e });
+    dispatch({ type: types.EDIT_NOTE_FAILURE, payload: e });
   }
 };
 
-// DELETE TODOS
-export const deleteTodos = (id) => async (dispatch) => {
-  dispatch({ type: types.DELETE_TODO_REQUEST });
+// DELETE NOTES
+export const deleteNotes = (id) => async (dispatch) => {
+  dispatch({ type: types.DELETE_NOTE_REQUEST });
 
   try {
-    const res = await axios.delete(`http://localhost:8080/todos/${id}`);
-    dispatch({ type: types.DELETE_TODO_SUCCESS, payload: id });
+    const res = await axios.delete(`http://localhost:8080/notes/${id}`);
+    dispatch({ type: types.DELETE_NOTE_SUCCESS, payload: id });
   } catch (e) {
-    dispatch({ type: types.DELETE_TODO_FAILURE, payload: e });
+    dispatch({ type: types.DELETE_NOTE_FAILURE, payload: e });
   }
 };
