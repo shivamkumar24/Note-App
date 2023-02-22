@@ -37,7 +37,7 @@ const Navbar = () => {
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Img h="50px" width="100px" src="Logo.png" alt="logo" />
 
-          <Heading>MakeTodo</Heading>
+          <Heading>Make To-Do</Heading>
 
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
