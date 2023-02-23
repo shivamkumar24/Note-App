@@ -52,7 +52,7 @@ const UpdateNote = () => {
                 size="sm"
                 fontSize="15px"
                 fontWeight="medium"
-                placeholder="Add Description ...."
+                placeholder="Update Description ...."
                 // onChange={(e) =>
                 //   setProductState({ type: "description", payload: e.target.value })
                 // }
@@ -73,7 +73,7 @@ const UpdateNote = () => {
               variant="outline"
               // onClick={addNoteHandler}
             >
-              Add Note
+              Update Note
             </Button>
           </ModalBody>
         </ModalContent>
