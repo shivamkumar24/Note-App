@@ -8,6 +8,7 @@ import {
   FormLabel,
   Input,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 
 const initialState = {
@@ -27,6 +28,7 @@ const reducerFunction = (state, action) => {
 };
 
 const AddNote = () => {
+  const toast = useToast();
   const dispatch = useDispatch();
   const [productState, setProductState] = useReducer(
     reducerFunction,
@@ -36,7 +38,13 @@ const AddNote = () => {
   const addNoteHandler = () => {
     if (JSON.stringify(productState) !== JSON.stringify(initialState)) {
       dispatch(addNotes(productState)).then(() => {
-        alert("Note Added SuccessFully .....");
+        toast({
+          title: "Added Successfully",
+          description: "Your new note is added now.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
       });
     }
   };

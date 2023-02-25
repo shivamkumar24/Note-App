@@ -1,29 +1,24 @@
 {
   "notes": [
     {
-      "title": "test1",
-      "description": "another test1",
+      "title": "Learn React",
+      "description": "React is a frontend library",
       "id": 1
     },
     {
-      "title": "test2",
-      "description": "another test2",
+      "title": "Learn Redux",
+      "description": "Redux is used to maintain data across your application.",
       "id": 2
     },
     {
-      "title": "test3",
-      "description": "another test3",
+      "title": "Learn Chakra-UI",
+      "description": "Chakra-UI is used for make application design faster.",
       "id": 3
     },
     {
-      "title": "test4",
-      "description": "another test4",
+      "title": "Learn CRUD with Redux",
+      "description": "It helps more in building an E-Commerce website.",
       "id": 4
-    },
-    {
-      "title": "test5",
-      "description": "another test5",
-      "id": 5
     }
   ]
 }

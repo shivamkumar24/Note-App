@@ -28,11 +28,11 @@ export const addNotes = (payload) => async (dispatch) => {
 };
 
 // EDIT NOTES (PATCH)
-export const editNotes = (id, payload) => async (dispatch) => {
+export const updateNotes = (editedNotes) => async (dispatch) => {
   dispatch({ type: types.EDIT_NOTE_REQUEST });
 
   try {
-    const res = await axios.patch(`http://localhost:8080/notes/${id}`, payload);
+    const res = await axios.patch(`http://localhost:8080/notes/${editedNotes.id}`, editedNotes);
     dispatch({ type: types.EDIT_NOTE_SUCCESS, payload: res.data });
   } catch (e) {
     dispatch({ type: types.EDIT_NOTE_FAILURE, payload: e });
