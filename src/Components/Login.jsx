@@ -58,7 +58,7 @@ const Login = () => {
         margin: "auto",
       }}
     >
-      <FormControl bg="#f2e3c6" p="20px">
+      <FormControl bg="#f6f5f4" p="20px">
         <Flex>
           <Box dispaly="block" m="auto">
             <Text fontSize="32px" fontWeight="bold" m="5px" textAlign="center">
