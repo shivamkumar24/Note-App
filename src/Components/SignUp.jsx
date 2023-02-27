@@ -63,6 +63,8 @@ const SignUp = () => {
         paddingTop: "100px",
         width: "40%",
         margin: "auto",
+        borderRadius: "18px",
+        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
       }}
     >
       <FormControl bg="#f6f5f4" p="20px">
