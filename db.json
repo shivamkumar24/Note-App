@@ -20,5 +20,25 @@
       "description": "It helps more in building an E-Commerce website.",
       "id": 4
     }
+  ],
+  "users": [
+    {
+      "name": "Shivam Kumar",
+      "email": "shivam2432000@gmail.com",
+      "password": "shivam@4321",
+      "phone": 9355228666,
+      "notes": [
+        {
+          "title": "Learn Redux",
+          "description": "Redux is used to maintain data across your application.",
+          "id": 1
+        },
+        {
+          "title": "Learn CRUD with Redux",
+          "description": "It helps more in building an E-Commerce website.",
+          "id": 2
+        }
+      ]
+    }
   ]
 }

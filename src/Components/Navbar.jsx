@@ -4,15 +4,22 @@ import {
   Flex,
   Button,
   useColorModeValue,
-  Stack,
-  useColorMode,
   Heading,
   Img,
 } from "@chakra-ui/react";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const navigate = useNavigate();
+
+  const handleSignup = () => {
+    navigate("/signup");
+  };
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
@@ -22,11 +29,24 @@ const Navbar = () => {
           <Heading>Note-Book</Heading>
 
           <Flex alignItems={"center"}>
-            <Stack direction={"row"} spacing={7}>
-              <Button onClick={toggleColorMode}>
-                {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-              </Button>
-            </Stack>
+            <Button
+              bg="green.400"
+              color="whitesmoke"
+              margin="2px 7px"
+              fontWeight="bold"
+              onClick={handleLogin}
+            >
+              Login
+            </Button>
+            <Button
+              bg="green.400"
+              color="whitesmoke"
+              margin="2px 7px"
+              fontWeight="bold"
+              onClick={handleSignup}
+            >
+              SignUp
+            </Button>
           </Flex>
         </Flex>
       </Box>
