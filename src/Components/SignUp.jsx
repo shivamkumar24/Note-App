@@ -114,11 +114,6 @@ const SignUp = () => {
             >
               SignUp
             </Button>
-
-            <Text textAlign="center">
-              *** You may receive SMS updates from Note-Book and can opt out at
-              any time. ***
-            </Text>
           </Box>
         </Flex>
       </FormControl>

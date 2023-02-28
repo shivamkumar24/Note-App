@@ -93,10 +93,6 @@ const Login = () => {
             >
               Login
             </Button>
-
-            <Text textAlign="center">
-              ** Welcome back again to our Service. **
-            </Text>
           </Box>
         </Flex>
       </FormControl>
