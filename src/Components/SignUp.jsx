@@ -17,8 +17,8 @@ const SignUp = () => {
 
   const [signupName, setSignupName] = useState("");
   const [signupEmail, setSignupEmail] = useState("");
-  const [signupPassword, setSignupPassword] = useState();
-  const [signupPhone, setSignupPhone] = useState();
+  const [signupPassword, setSignupPassword] = useState("");
+  const [signupPhone, setSignupPhone] = useState("");
 
   const SignUpCheck = () => {
     let signupobj = {
@@ -30,10 +30,10 @@ const SignUp = () => {
     };
 
     axios
-      .post(` http://localhost:8080/users`, signupobj)
+      .post(`http://localhost:8080/users`, signupobj)
       .then((res) => {
         console.log(res.data);
-        localStorage.setItem("accountdata", JSON.stringify(res.data));
+        localStorage.setItem("signupdata", JSON.stringify(res.data));
         localStorage.setItem("isAuth", true);
         navigate("/");
         toast({
@@ -47,7 +47,7 @@ const SignUp = () => {
       .catch((e) => {
         console.log("Error:", e);
         toast({
-          title: "Something wrong",
+          title: "Something goes wrong",
           description: "We've not create your account",
           status: "failure",
           duration: 5000,
@@ -59,48 +59,53 @@ const SignUp = () => {
   return (
     <div
       style={{
-        alignContent: "center",
-        paddingTop: "100px",
-        width: "40%",
+        width: "30%",
         margin: "auto",
+        marginTop: "100px",
+        alignContent: "center",
         borderRadius: "18px",
         boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
       }}
     >
       <FormControl bg="#f6f5f4" p="20px">
         <Flex>
-          <Box dispaly="block" m="auto 20px">
+          <Box dispaly="block" m="auto">
             <Text fontSize="32px" fontWeight="bold" m="5px" textAlign="center">
               SignUp
             </Text>
             <Input
+              w="300px"
               type="text"
-              placeholder="Name"
               m="10px 5px"
+              id="signupname"
+              placeholder="Name"
               display={{ base: "none", md: "flex" }}
               border="1px solid teal"
               onChange={(e) => setSignupName(e.target.value)}
             />
             <Input
               type="email"
-              placeholder="Email"
               m="10px 5px"
+              id="signupemail"
+              placeholder="Email"
               display={{ base: "none", md: "flex" }}
               border="1px solid teal"
               onChange={(e) => setSignupEmail(e.target.value)}
             />
             <Input
-              type="password"
-              placeholder="Password"
               m="10px 5px"
+              type="password"
+              id="signuppassword"
+              placeholder="Password"
               display={{ base: "none", md: "flex" }}
               border="1px solid teal"
               onChange={(e) => setSignupPassword(e.target.value)}
             />
             <Input
-              type="number"
-              placeholder="Phone"
               m="10px 5px"
+              type="number"
+              id="signupphone"
+              placeholder="Phone"
               display={{ base: "none", md: "flex" }}
               border="1px solid teal"
               onChange={(e) => setSignupPhone(e.target.value)}

@@ -18,27 +18,27 @@ const Login = () => {
   const [loginPassword, setLoginPassword] = useState("");
 
   const LoginCheck = async () => {
-    let res = await axios.get(` http://localhost:8080/users`);
+    let res = await axios.get(`http://localhost:8080/users`);
     let data = await res.data;
     console.log(data);
 
-    let notthere = true;
+    let notFound = true;
     for (let i = 0; i < data.length; i++) {
       if (data[i].email === loginEmail && data[i].password && loginPassword) {
-        localStorage.setItem("accountdata", JSON.stringify(data[i]));
+        localStorage.setItem("logindata", JSON.stringify(data[i]));
         localStorage.setItem("isAuth", true);
         navigate("/");
         toast({
           title: "Successfully Login",
-          description: "Welcome to Fit-Factory",
+          description: "Welcome to Note-Book",
           status: "success",
           duration: 5000,
           isClosable: true,
         });
-        notthere = false;
+        notFound = false;
       }
     }
-    if (notthere) {
+    if (notFound) {
       toast({
         title: "Invalid Credentials",
         description: "Your data is not matched to our record",
@@ -52,10 +52,10 @@ const Login = () => {
   return (
     <div
       style={{
-        alignContent: "center",
-        paddingTop: "100px",
-        width: "40%",
+        width: "30%",
         margin: "auto",
+        marginTop: "100px",
+        alignContent: "center",
         borderRadius: "18px",
         boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
       }}
@@ -67,6 +67,7 @@ const Login = () => {
               Login
             </Text>
             <Input
+              w="300px"
               m="10px 5px"
               id="loginemail"
               type="email"
@@ -92,7 +93,6 @@ const Login = () => {
             >
               Login
             </Button>
-            /* Today i am working on this application. */
           </Box>
         </Flex>
       </FormControl>

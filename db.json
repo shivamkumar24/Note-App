@@ -23,6 +23,7 @@
   ],
   "users": [
     {
+      "id": 1,
       "name": "Shivam Kumar",
       "email": "shivam2432000@gmail.com",
       "password": "shivam@4321",
@@ -39,6 +40,14 @@
           "id": 2
         }
       ]
+    },
+    {
+      "name": "Ramesh",
+      "email": "ramesh@gmail.com",
+      "password": "12345",
+      "phone": "3527635783",
+      "notes": [],
+      "id": 2
     }
   ]
 }
